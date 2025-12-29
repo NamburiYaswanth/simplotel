@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #ff7070;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0px 7rem;
+            height: 53px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        img {
+            height: 24px;
+            width: 25px;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+
+        .content {
+            flex: 1;
+            padding: 80px 70px;
+            background: linear-gradient(to right,
+                    #fff5b8,
+                    #ffd3c9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content h1 {
+            font-size: 42px;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            color: #111;
+        }
+
+        .content p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #333;
+            max-width: 500px;
+            margin-bottom: 35px;
+        }
+
+        .content button {
+            width: fit-content;
+            padding: 12px 35px;
+            border: none;
+            background: #ff6f6f;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+
+        .image-section {
+            flex: 1;
+        }
+
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ===== TABLET ===== */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .content {
+                padding: 60px 40px;
+            }
+
+            .content h1 {
+                font-size: 36px;
+            }
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .content {
+                padding: 40px 25px;
+                text-align: left;
+            }
+
+            .content h1 {
+                font-size: 28px;
+                letter-spacing: 2px;
+            }
+
+            .content p {
+                font-size: 13px;
+            }
+
+            .content button {
+                padding: 10px 30px;
+            }
+
+            .image-section {
+                height: 300px;
+            }
+        }
+
+        /* ===== SMALL MOBILE ===== */
+        @media (max-width: 480px) {
+            .image-section {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                padding: 0px;
+            }
+
+            header {
+                padding: 0px 0px;
+            }
+
+            nav ul li a {
+                font-size: 10px;
+            }
+
+            img {
+                padding-top: 3px;
+            }
+        }
+
+        .wrapper {
+            display: flex;
+            padding: 60px;
+            /* max-width: 1200px; */
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+
+        /* ===== IMAGE GRID ===== */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 320px 320px;
+            grid-template-rows: 300px 300px;
+            gap: 20px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-grid .tall {
+            grid-row: span 2;
+            height: 620px;
+        }
+
+        /* ===== CONTENT BOX ===== */
+        .content-box {
+            background: #ff7a7a;
+            padding: 40px 45px;
+            margin: 0px 20px;
+            flex: 1;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 160px;
+            gap: 35px;
+        }
+
+        .content-box small {
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .content-box h1 {
+            font-size: 34px;
+            letter-spacing: 4px;
+            line-height: 1.2;
+        }
+
+        .content-box a {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #000;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+        }
+
+
+        .tall {
+            width: 500px;
+        }
+       
+
+        @media (min-width:600px) and (max-width:1023px){
+            .wrapper{
+                display: flex;
+                flex-direction: column;
+            }
+            .content-box{
+                margin: 10px;
+            }
+        }
+        @media (min-width:1024px){
+            .wrapper{
+                padding: 100px;
+            }
+        }
+        @media (max-width: 600px) {
+            .wrapper {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .image-grid .tall {
+                grid-row: auto;
+            }
+
+            .content-box{
+                margin-top: 10px;
+            }
+
+            .content-box h1 {
+                font-size: 26px;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Order</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Restaruant</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><img src="./menu-bar.png" /></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <h1>LOREM IPSUM</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                id est vitae dolor rhoncus tristique. Maecenas metus quam,
+                rhoncus euismod lorem in, sollicitudin viverra eros. Donec
+                dictum luctus quam ut tristique. Curabitur nec faucibus purus.
+                Quisque congue sem nec justo mollis, in tincidunt erat pretium.
+                Sed pulvinar, massa ac porta viverra.
+            </p>
+            <button>Click Me</button>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="image-section">
+            <img src="./pexels-robin-stickel-70497.jpg" alt="Food Image" />
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <!-- IMAGE GRID -->
+        <div class="image-grid">
+            <img src="./pexels-eva-bronzini-6141651.jpg" alt="image1" class="short">
+            <img src="./pexels-mister-mister-3434523.jpg" alt="image2" class="tall">
+            <img src="./pexels-rachel-claire-6752433.jpg" alt="image3" class="short">
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-box">
+            <small>LOREM IPSUM</small>
+            <h1>LOREM IPSUM<br>SET ADEMIR</h1>
+            <a href="#">Click →</a>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
